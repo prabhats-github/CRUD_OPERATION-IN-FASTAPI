@@ -46,3 +46,13 @@ async def partial_update_product(product_id: int, updated_data: dict):
             products[index].update(updated_data)
             return {"status": "Product partially updated successfully", "updated product": products[index]}
     return {"error": "Product not found"}
+
+
+#delete request
+#delete a product by id
+@app.delete("/products/{product_id}")
+async def delete_product(product_id: int):
+   for index, i in enumerate(products):
+        if i["id"] == product_id:
+           products.pop(index)
+        return {"status": "Product deleted successfully"}
