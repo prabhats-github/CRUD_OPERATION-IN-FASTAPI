@@ -55,4 +55,4 @@ async def delete_product(product_id: int):
    for index, i in enumerate(products):
         if i["id"] == product_id:
             products.pop(index)
-            return {"status": "Product deleted successfully"}
+            return {"status": "Product deleted successfully", "product_id": product_id}
