@@ -26,5 +26,5 @@ async def get_product(product_id: int):
 @app.post("/products")
 async def create_product(new_product: dict):
     products.append(new_product)
-    return {"status": "Product created successfully", "product": new_product}
+    return {"status": "Product created successfully", "new product": new_product}
     
