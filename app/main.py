@@ -13,3 +13,11 @@ products = [
 @app.get("/products")
 async def get_products():
     return products
+
+#read or fetch a single product by id using get method
+@app.get("/products/{product_id}")
+async def get_product(product_id: int):
+    for i in products:
+        if i["id"] == product_id:
+            return i
+    return {"error": "Product not found"}
