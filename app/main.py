@@ -54,5 +54,5 @@ async def partial_update_product(product_id: int, updated_data: dict):
 async def delete_product(product_id: int):
    for index, i in enumerate(products):
         if i["id"] == product_id:
-           products.pop(index)
-        return {"status": "Product deleted successfully"}
+            products.pop(index)
+            return {"status": "Product deleted successfully"}
