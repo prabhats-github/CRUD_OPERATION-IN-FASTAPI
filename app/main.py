@@ -30,4 +30,19 @@ async def create_product(new_product: dict):
 
 #put request
 #update complete data
-    
+@app.put("/products/{product_id}")
+async def update_product(product_id: int, updated_product: dict):
+    for index, i in enumerate(products):
+        if i["id"] == product_id:
+            products[index] = updated_product
+            return {"status": "Product updated successfully", "updated product": updated_product}
+       
+#patch request 
+#update partial data
+@app.patch("/products/{product_id}")
+async def partial_update_product(product_id: int, updated_data: dict):
+    for index, i in enumerate(products):
+        if i["id"] == product_id:
+            products[index].update(updated_data)
+            return {"status": "Product partially updated successfully", "updated product": products[index]}
+    return {"error": "Product not found"}
