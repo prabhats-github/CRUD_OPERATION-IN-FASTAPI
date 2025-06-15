@@ -21,3 +21,10 @@ async def get_product(product_id: int):
         if i["id"] == product_id:
             return i
     return {"error": "Product not found"}
+
+# Create or insert a new product using post method
+@app.post("/products")
+async def create_product(new_product: dict):
+    products.append(new_product)
+    return {"status": "Product created successfully", "product": new_product}
+    
