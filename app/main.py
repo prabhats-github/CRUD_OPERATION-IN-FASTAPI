@@ -27,4 +27,7 @@ async def get_product(product_id: int):
 async def create_product(new_product: dict):
     products.append(new_product)
     return {"status": "Product created successfully", "new product": new_product}
+
+#put request
+#update complete data
     
